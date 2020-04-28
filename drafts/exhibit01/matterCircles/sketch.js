@@ -19,13 +19,10 @@ var bthick = 100;
 // array for boundary
 var boundary = [];
 let sound, amplitude, size;
-
-// preload audio file
-function preload() {
-  sound = loadSound('../files/pandi & lvusm - scope.mp3');
-}
+var max_circles = 300;
 
 function setup() {
+  sound = loadSound('../files/pandi & lvusm - scope.mp3');
   createCanvas(windowWidth, windowHeight);
   // low framerate to support slower devices
   frameRate(24);
@@ -36,23 +33,16 @@ function setup() {
   //boundary = new Boundary();
   // add a Boundary obj to array
   Engine.run(engine);
-  //   // options for ground body
-  //   var options = {
-  //     isStatic: true
-  //   }
-  //   // creating ground body
-  //   ground = Bodies.rectangle(width / 2, height - 50, width, bthick, options);
-  //   World.add(world, ground);
-  // }
 
 }
 
 // click and drag to create circles
 function mouseDragged() {
-  circles.push(new Circle(mouseX, mouseY, random(10, 40) + size));
-  // circles radius changes with size var
+  if (circles.length < max_circles) {
+    circles.push(new Circle(mouseX, mouseY, random(10, 40) + size));
+    // circles radius changes with global size variable
+  }
 }
-
 
 function draw() {
   // background gets drawn first before everything else
@@ -68,42 +58,42 @@ function draw() {
 
   //loop thru array to display circles as they get added to array
   for (var i = 0; i < circles.length; i++) {
-    circles[i].show();
+    circles[i].show(size);
     //console.log(circles[i]);
     // shows all parameters for each matter.js body
   }
 
-  // loop thru array backwards to check if a circle is offScreen
-  // must loop backwards to avoid skipping
-  for (var i = circles.length - 1; i >= 0; i--) {
-    if (circles[i].isOffScreen()) {
-      // must remove bodies from world, THEN remove them from array
+  // create a temp array
+  // this loops thru each item in circles
+  // if item is good (not offscreen) then add to temp array
+  // now temp array has all good items and replaces circles array
+  // all the bad items that were offscreen get left behind in the old circles array
+  var tempCircles = [];
+  for (var i = 0; i < circles.length; i++) {
+    if (!circles[i].isOffScreen()) {
+      tempCircles.push(circles[i]);
+    } else {
       circles[i].removeFromWorld();
-      circles.splice(i, 1);
     }
   }
-
-  // // details for drawing ground
-  // // note that rectmode must be CENTER to match with matter.js
-  // fill(0);
-  // rectMode(CENTER);
-  // noStroke();
-  // rect(ground.position.x, ground.position.y, windowWidth, bthick);
+  circles = tempCircles;
 
   //console.log(circles.length, world.bodies.length);
-  // just to check that circles and bodies are being remove
-  // as they fall off screen
+  // just to check that circles and bodies are being removed as they fall off screen
 }
 
 // resize canvas if they play with window size
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  for (var i = boundary.length - 1; i >= 0; i--) {
+  // use same temp array apporach with boundary
+  var tempBoundary = [];
+  for (var i = 0; i < boundary.length; i++) {
     boundary[i].removeFromWorld();
-    boundary.splice(i, 1);
-    boundary.push(new Boundary(windowWidth / 2, windowHeight, windowWidth, bthick));
+    // get rid of old boundary
   }
-  //boundary = new Boundary(windowWidth / 2, windowHeight, windowWidth, bthick);
+  boundary = tempBoundary;
+  // then add a new one with recently resized window specs to the now empty array
+  boundary.push(new Boundary(windowWidth / 2, windowHeight, windowWidth, bthick));
 }
 
 // if spacebar pushed toggleSound()

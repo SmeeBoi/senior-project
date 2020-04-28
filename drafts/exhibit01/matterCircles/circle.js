@@ -18,7 +18,14 @@ function Circle(x, y, r) {
   // then remove obj from array
   this.isOffScreen = function() {
     var pos = this.body.position;
-    return (pos.y > height + 100);
+    //  return (pos.y > height + 100);
+    if (pos.y > height + 100 || pos.x < -100 || pos.x > width + 100) {
+      return true;
+    } else {
+      return false;
+    }
+
+
     // give 100 buffer
     //will return true or false to check
   }
@@ -30,7 +37,7 @@ function Circle(x, y, r) {
 
 
   // show fxn that runs each frame in draw() loop
-  this.show = function() {
+  this.show = function(scale) {
     var pos = this.body.position;
     var angle = this.body.angle;
 
@@ -45,7 +52,7 @@ function Circle(x, y, r) {
     stroke(255);
     fill(0);
     // p5 takes diameter hence r*2 to match with matter.js
-    circle(0, 0, this.r * 2 + size);
+    circle(0, 0, (this.r * 2) + scale);
     pop();
   }
 
