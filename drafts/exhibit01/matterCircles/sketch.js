@@ -20,8 +20,11 @@ var bthick = 50;
 var boundary = [];
 let sound, amplitude, size;
 var max_circles = 300;
+var c;
 
 function setup() {
+  // global color type variable to change color of circles
+  c = color(255);
   sound = loadSound('../files/pandi & lvusm - scope.mp3');
   createCanvas(windowWidth, windowHeight);
   // low framerate to support slower devices
@@ -29,7 +32,7 @@ function setup() {
   amplitude = new p5.Amplitude();
   engine = Engine.create();
   world = engine.world;
-  boundary.push(new Boundary(windowWidth / 2, windowHeight, windowWidth, bthick));
+  boundary.push(new Boundary());
   //boundary = new Boundary();
   // add a Boundary obj to array
   Engine.run(engine);
@@ -93,7 +96,7 @@ function windowResized() {
   }
   boundary = tempBoundary;
   // then add a new one with recently resized window specs to the now empty array
-  boundary.push(new Boundary(windowWidth / 2, windowHeight, windowWidth, bthick));
+  boundary.push(new Boundary());
 }
 
 // checks for key presses
@@ -108,13 +111,22 @@ function keyPressed() {
     let fs = fullscreen();
     fullscreen(!fs);
   }
+
+  // a and d to move through diff colors
+  // a = 65 and d = 68
+
+
+
+
+
+
 }
 
 
 // start/pause music
 function toggleSound() {
   if (sound.isPlaying()) {
-    sound.stop();
+    sound.pause();
   } else {
     sound.play();
   }

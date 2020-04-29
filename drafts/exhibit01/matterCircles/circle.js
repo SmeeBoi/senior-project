@@ -49,7 +49,7 @@ function Circle(x, y, r) {
     // dont need it for circles
     //rotate(angle);
     strokeWeight(2);
-    stroke(255);
+    stroke(c);
     fill(0);
     // p5 takes diameter hence r*2 to match with matter.js
     circle(0, 0, (this.r * 2) + scale);
