@@ -14,7 +14,7 @@ var world;
 var circles = [];
 //var ground;
 //boundary thickness must be thick so circles dont pass thru bug
-var bthick = 100;
+var bthick = 50;
 //let boundary;
 // array for boundary
 var boundary = [];
@@ -96,13 +96,20 @@ function windowResized() {
   boundary.push(new Boundary(windowWidth / 2, windowHeight, windowWidth, bthick));
 }
 
-// if spacebar pushed toggleSound()
+// checks for key presses
 function keyPressed() {
-  // keyCode for spacebar is 32 wack right
-  if (keyCode == 32) {
+  // if spacebar pushed toggleSound()
+  if (keyCode == 32) { // keyCode for spacebar is 32 wack right
     toggleSound();
   }
+
+  // press f to enter fullscreen
+  else if (keyCode == 70) {
+    let fs = fullscreen();
+    fullscreen(!fs);
+  }
 }
+
 
 // start/pause music
 function toggleSound() {

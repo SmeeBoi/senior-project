@@ -4,14 +4,10 @@ function Boundary() {
     isStatic: true
   }
 
-  // creating boundary with 3 diff rect
-  //bottom = Bodies.rectangle(windowWidth / 2, windowHeight / 2, windowWidth / 2, bthick,options);
-  this.body = Bodies.rectangle(windowWidth / 2, windowHeight, windowWidth, bthick, options);
+  // creating boundary with 1 rect
+  this.body = Bodies.rectangle(windowWidth / 2, ((windowHeight) + ((bthick / 2)) - 10), windowWidth, bthick, options);
 
-  // left = Bodies.rectangle(width / 2, height - 50, width, bthick, options);
-  // right = Bodies.rectangle(width / 2, height - 50, width, bthick, options);
   World.add(world, this.body);
-  //World.add(world,bottom,left,right);
 
   //fxn to remove matter.js body objects from world after offScreen() check
   this.removeFromWorld = function() {
@@ -30,7 +26,7 @@ function Boundary() {
     //rotate(angle);
     rectMode(CENTER);
     noStroke();
-    fill(255);
+    fill(0);
     // dimensions of rect must match with above matter.js body dimensions
     // too lazy to tap into body.vertices or whatev
     rect(0, 0, windowWidth, bthick);
