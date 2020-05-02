@@ -22,6 +22,8 @@ let sound, amplitude, size;
 var max_circles = 300;
 var c;
 
+
+
 function setup() {
   // global color type variable to change color of circles
   c = color(255);
