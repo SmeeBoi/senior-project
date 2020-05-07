@@ -14,9 +14,9 @@ let detections = [];
 
 function setup() {
   //console.log('ml5 version:', ml5.version);
-  createCanvas(360, 270);
+  createCanvas(windowWidth, windowHeight);
   video = createCapture(VIDEO);
-  //video.hide();
+  video.hide();
   video.size(width, height);
   const options = {
     withLandmarks: true,
@@ -44,7 +44,7 @@ function gotResults(err, result) {
         console.log(err)
         return
     }
-    // console.log(result)
+     console.log(result)
     detections = result;
 
     // background(220);
@@ -53,7 +53,7 @@ function gotResults(err, result) {
     if (detections) {
         if (detections.length > 0) {
             // console.log(detections)
-            Face(detections)
+            Face(detections);
             // here is where we draw the face
         }
 

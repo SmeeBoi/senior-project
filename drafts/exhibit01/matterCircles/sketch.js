@@ -21,7 +21,7 @@ var boundary = [];
 let sound, amplitude, size;
 var max_circles = 300;
 var c;
-
+// var alpha = 0;
 
 
 function setup() {
@@ -52,6 +52,12 @@ function mouseDragged() {
 function draw() {
   // background gets drawn first before everything else
   background(0);
+  //tried fading text stuff
+  // let welcome = new welcomeText();
+  // alpha = alpha + ;
+  // if (!sound.isPlaying()){
+  //   welcome.show();
+  // }
   // variable for volume then remap so instead of 0-1 values we get 0-200 values
   let level = amplitude.getLevel();
   size = map(level, 0, 1, 0, 200);
@@ -87,6 +93,13 @@ function draw() {
   // just to check that circles and bodies are being removed as they fall off screen
 }
 
+
+
+
+
+
+
+
 // resize canvas if they play with window size
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
@@ -116,10 +129,6 @@ function keyPressed() {
 
   // a and d to move through diff colors
   // a = 65 and d = 68
-
-
-
-
 
 
 }
