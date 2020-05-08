@@ -22,10 +22,16 @@ let sound, amplitude, size;
 var max_circles = 300;
 var c;
 // var alpha = 0;
+var fade;
+var stateChoice;
+var msg;
 
 
 function setup() {
   // global color type variable to change color of circles
+  stateChoice = 0;
+  fade = 0;
+  msg = "";
   c = color(255);
   sound = loadSound('../files/pandi & lvusm - scope.mp3');
   createCanvas(windowWidth, windowHeight);
@@ -52,6 +58,7 @@ function mouseDragged() {
 function draw() {
   // background gets drawn first before everything else
   background(0);
+  instructions();
   //tried fading text stuff
   // let welcome = new welcomeText();
   // alpha = alpha + ;
@@ -119,12 +126,13 @@ function keyPressed() {
   // if spacebar pushed toggleSound()
   if (keyCode == 32) { // keyCode for spacebar is 32 wack right
     toggleSound();
+    stateChoice = 5;
   }
 
   // press f to enter fullscreen
   else if (keyCode == 70) {
-    let fs = fullscreen();
-    fullscreen(!fs);
+    fullscreen(true);
+    stateChoice = 1;
   }
 
   // a and d to move through diff colors
