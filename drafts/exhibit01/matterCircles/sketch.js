@@ -95,15 +95,9 @@ function draw() {
     }
   }
   circles = tempCircles;
-
   //console.log(circles.length, world.bodies.length);
   // just to check that circles and bodies are being removed as they fall off screen
 }
-
-
-
-
-
 
 
 
@@ -126,21 +120,18 @@ function keyPressed() {
   // if spacebar pushed toggleSound()
   if (keyCode == 32) { // keyCode for spacebar is 32 wack right
     toggleSound();
-    stateChoice = 5;
+    //stateChoice = 5;
   }
 
   // press f to enter fullscreen
   else if (keyCode == 70) {
     fullscreen(true);
-    stateChoice = 1;
+    if (stateChoice == 0) {
+      stateChoice = 1;
+      toggleSound();
+    }
   }
-
-  // a and d to move through diff colors
-  // a = 65 and d = 68
-
-
 }
-
 
 // start/pause music
 function toggleSound() {

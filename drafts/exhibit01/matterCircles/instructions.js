@@ -42,8 +42,11 @@ function instructions() {
 
 
     case 4:
-      msg = "Press Spacebar to Start";
+      msg = "Click and drag mouse";
       fade += 5;
+      if (fade > 255) {
+        stateChoice = 5;
+      }
       break;
 
     case 5:
@@ -51,13 +54,13 @@ function instructions() {
       break;
 
       // start exhibit01
-    case 6:
-      //link to exhibi01?
-      // animation to exhibit01?
-      break;
+    // case 6:
+    //   //link to exhibi01?
+    //   // animation to exhibit01?
+    //   break;
 
     default:
-      stateChoice = 6;
+      stateChoice = 4;
       break;
 
   }
