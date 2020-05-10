@@ -36,23 +36,6 @@ header{
   padding: 15px 0px;
 }
 
-.ml12 {
-  font-weight: 200;
-  font-size: 1.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-}
-
-.ml12 .letter{
-  display: inline-block;
-    line-height: 1em;
-}
-
-
-
-
-
-
 .nav_links li a{
   transition: all 0.8s ease 0s;
 }
