@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li, a {
+  font-family: 'Montserrat';
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav_links {
+  background-color: rgba(0, 0, 0, 0);
+  list-style: none;
+  position: fixed;
+  top: 10%;
+  left: 2%;
+}
+
+.nav_links li {
+  padding: 15px 0px;
+}
+
+.nav_links li :hover {
+  color: cyan;
+  transition: all 0.8s ease 0s;
+}
+
+.menu_button {
+  outline: none;
+  padding: 20px 20px;
+  background-color: black;
+  border-width: small;
+  border-color: white;
+  cursor: pointer;
+  position: fixed;
+  top: 4%;
+  left: 2%;
+  transition: all 0.8s ease 0s;
+}
+
+.menu_button:hover {
+  background-color: cyan;
+  transition: all 0.8s ease 0s;
+}
