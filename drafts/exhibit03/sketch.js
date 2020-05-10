@@ -1,33 +1,52 @@
 // Sameer Desai
 // exhibit03 draft
 let angle = 0;
+var size = 0;
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-
-
+  angleMode(DEGREES);
+  //frameRate(24);
 }
 
 function draw() {
-  ambientLight(255);
-  background(5);
-   noStroke();
-  //stroke(0);
-  // fill(200,100,250);
-  // normalMaterial();
-  ambientMaterial(255,0,0);
-  rectMode(CENTER);
+  background(0);
+  orbitControl(1,1,0.5);
+  // camera(0,0,(height/2)/tan(30),0,0,0,0,1,0);
+  perspective(100,width/height, 10,10000);
 
-//  translate(mouseX - width/2,mouseY - height/2);
-  translate(0,0,mouseX);
-  rotateX(angle);
-  rotateY(angle);
-  rotateY(angle);
-  torus(100);
+
+Cubes();
+
+
+  push();
+  fill(255,0,0);
+  translate(0,0,0);
+  rotateX(90);
+  noStroke();
+  plane(1000,1000);
+  pop();
+
+  push();
+  fill(0,255,0);
+    translate(0,0,0);
+    //rotateX();
+    noStroke();
+    plane(1000,1000);
+    pop();
+
+    push();
+    fill(0,0,255);
+      translate(0,0,0);
+      rotateY(90);
+      noStroke();
+      plane(1000,1000);
+      pop();
+
   //square(0, 0, 200);
 
-  angle += 0.02;
+  angle += 0.1;
 }
 
 

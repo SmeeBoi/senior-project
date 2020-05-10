@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+}
+
+.text-animation {
+  color:#f5f5f5;
+  font-size:50px;
+  font-family:'Montserrat';
+  letter-spacing:1px;
+}
+.text-animation .letter {
+  display:inline-block;
+}

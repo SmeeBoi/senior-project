@@ -43,14 +43,14 @@ function instructions() {
 
     case 4:
       msg = "Click and drag mouse";
-      fade += 5;
+      fade += 10;
       if (fade > 255) {
         stateChoice = 5;
       }
       break;
 
     case 5:
-      fade -= 5;
+      fade -= 10;
       break;
 
       // start exhibit01
