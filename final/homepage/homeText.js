@@ -11,7 +11,7 @@ function textState() {
   textSize(ratio / 2);
   fill(fade);
   text(msg, width / 2, height / 1.7);
-  var fadeIncrease = 3;
+  var fadeIncrease = 2;
   var fadeDecrease = 1;
 
 
@@ -51,13 +51,9 @@ function textState() {
     case 4:
       fade -= fadeDecrease;
       if (fade < 0) {
-        stateChoice = 5;
+        stateChoice = 1;
       }
       break;
-
-      case 5:
-        msg = "";
-        break;
 
     default:
       stateChoice = 4;

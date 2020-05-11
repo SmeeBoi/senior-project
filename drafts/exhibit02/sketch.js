@@ -2,9 +2,6 @@
 // exhibit 02 draft
 // Using face-api.js thru ml5.js for facial feature tracking
 
-
-
-
 // input size must be divisible by 32
 // try 160
 
@@ -63,14 +60,17 @@ function gotResults(err, result) {
 }
 
 function draw() {
+
   background(255);
-  //image(video, 10, 10);
+
+
   Face(detections);
 
-
-
-
-
+  // if(points[57]._y-points[51]._y>40){
+  //  for(var i=0;i<100;i=i+1){ //loop 5 times
+  //     candy[i].display(); //run the display function of the object
+  //     candy[i].move();
+  //   }}
 
 
 
@@ -85,13 +85,7 @@ function draw() {
 //   }
 
 
-
-
-
 }
-
-
-
 
 
 function windowResized() {
