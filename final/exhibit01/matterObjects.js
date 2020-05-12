@@ -20,11 +20,11 @@ function Circle(x, y, r) {
     }
   }
 
-  this.removeFromWorld = function() {
+  this.removeFromWorld = function(size) {
     World.remove(world, this.body);
   }
 
-  this.show = function(scale) {
+  this.show = function(size) {
     var pos = this.body.position;
 
     push();
@@ -32,7 +32,7 @@ function Circle(x, y, r) {
     strokeWeight(2);
     stroke(255);
     fill(0);
-    circle(0, 0, (this.r * 2) + scale);
+    circle(0, 0, (this.r * 2) + size);
     pop();
   }
 }

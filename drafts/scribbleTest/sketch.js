@@ -1,40 +1,22 @@
-let squares = [];
-let angle = 0;
+
 function setup() {
   createCanvas(400, 400);
-  angleMode(DEGREES);
+
   rectMode(CENTER);
 }
 
 function draw() {
-  background(100, 200, 220);
-  squares.push(new Square(width/2,height/2,80));
-  //squares.push(new Square(width/2,height/2 + 50,80));
+  background(0);
+  // scale(2);
+  rect(10,10,20,10);
+
+  push();
+  translate()
+  scale(2);
+  fill(255,0,0);
+  rect(20,20,20,10);
+  pop();
 
 
-  for (var i = 0; i < squares.length; i++) {
-    background(100, 200, 220);
-    squares[i].show();
-
-  }
-angle = angle + 2;
-
-
-}
-
-function Square(x,y,size) {
-  var scribble = new Scribble();
-
-
-  this.show = function() {
-    push();
-    stroke(255);
-    translate(x,y);
-    rotate(angle);
-    rect(0,0, size,size);
-    pop();
-
-
-  }
 
 }

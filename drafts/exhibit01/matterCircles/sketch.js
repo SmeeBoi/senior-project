@@ -72,7 +72,6 @@ function draw() {
 }
 
 
-
 // resize canvas if they play with window size
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
