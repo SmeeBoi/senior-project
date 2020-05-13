@@ -6,7 +6,7 @@ var stateChoice;
 let particles = [];
 
 function setup() {
-  //frameRate(24);
+  frameRate(24);
   createCanvas(windowWidth, windowHeight);
   ratio = width / 15;
   stateChoice = 0;

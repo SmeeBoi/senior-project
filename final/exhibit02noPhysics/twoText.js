@@ -1,5 +1,6 @@
 function twoText() {
   fill(fade);
+  noStroke();
   textSize(height / 15);
   textFont('Montserrat');
   textAlign(CENTER, CENTER);
@@ -64,13 +65,11 @@ function twoText() {
       break;
 
     case 8:
-      fade = 0;
-      msg = "";
+      fade -= 5;
       break;
 
-
     default:
-      stateChoice = 8;
+      stateChoice = 6;
       break;
 
   }

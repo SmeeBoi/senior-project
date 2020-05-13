@@ -10,15 +10,21 @@ var Engine = Matter.Engine,
   Bodies = Matter.Bodies,
   Vertices = Matter.Vertices;
 
-let video;
+var video;
 let faceapi
 let detections = [];
 let sound, amplitude, size;
 var rainDrops = [];
+var matterEyes = [];
 var fade;
 var stateChoice;
 var msg;
 
+
+
+function preload() {
+  sound = loadSound('aislin - ENRA & Sleepermane.mp3');
+}
 
 function setup() {
   frameRate(24);
@@ -26,7 +32,6 @@ function setup() {
   fade = 0;
   msg = "";
   //console.log('ml5 version:', ml5.version);
-  sound = loadSound('aislin - ENRA & Sleepermane.mp3');
   amplitude = new p5.Amplitude();
   createCanvas(windowWidth, windowHeight);
   video = createCapture(VIDEO);
@@ -75,65 +80,74 @@ function draw() {
   size = map(level, 0, 1, 0, max_size);
 
   background(0);
-  twoText();
+  stateChoice = 8;
+  //twoText();
   //    image(video, 0,0, width, height)
 
   if (stateChoice == 8) {
-    if (detections) {
-      if (detections.length > 0) {
-        // console.log(detections)
-        Face(detections);
-        MatterEyes(detections);
-        // here is where we draw the face
-      }
+    if (detections.length > 0) {
+      // console.log(detections)
+      Face(detections);
+      // MatterEyes(detections);
+      matterEyes.push(new MatterEyes(detections));
+      // here is where we draw the face
     }
+  }
 
-    var max_drops = 500;
-    if (rainDrops.length < max_drops) {
-      for (var i = 0; i < 2; i++) {
-        // rainDrops.push(new MatterDrop(random(width), random(-100,50), 2, random(10,20)));
-        rainDrops.push(new MatterDrop(random(width), random(-100, 50), 2, random(10, 20)));
-      }
-    }
+  var max_drops = 500;
+  if (rainDrops.length < max_drops) {
+    for (var i = 0; i < 3; i++) {
+      rainDrops.push(new MatterDrop(random(width), random(-10, 50), 2, random(10, 20)));
 
-    for (var i = 0; i < rainDrops.length; i++) {
-      rainDrops[i].show();
-    }
+      // rainDrops.push(new MatterDrop(random(width), random(-100, 50), 20, 40));
 
-    var tempDrops = [];
-    for (var i = 0; i < rainDrops.length; i++) {
-      if (!rainDrops[i].isOffScreen()) {
-        tempDrops.push(rainDrops[i]);
-      } else {
-        rainDrops[i].removeFromWorld();
-      }
+      // rainDrops.push(new MatterDrop(random(width), random(-10, 50), 2, random(10, 20)));
+
+
+      // rainDrops.push(new MatterDrop(mouseX, mouseY, 2, random(10,20)));
     }
-    rainDrops = tempDrops;
+  }
+
+  for (var i = 0; i < rainDrops.length; i++) {
+    rainDrops[i].show();
   }
 
 
+  for (var i = 0; i < matterEyes.length; i++) {
+    matterEyes[i].show();
+  }
 
-  // if(points[57]._y-points[51]._y>40){
-  //  for(var i=0;i<100;i=i+1){ //loop 5 times
-  //     candy[i].display(); //run the display function of the object
-  //     candy[i].move();
-  //   }}
+  // for (var i = 0; i < rainDrops.length; i++) {
+  //   rainDrops[i].show();
+  // }
 
+  var tempDrops = [];
+  for (var i = 0; i < rainDrops.length; i++) {
+    if (!rainDrops[i].isOffScreen()) {
+      tempDrops.push(rainDrops[i]);
+    } else {
+      rainDrops[i].removeFromWorld();
+    }
+  }
+  rainDrops = tempDrops;
 
+var matterKeep = 10;
+  if (matterEyes.length > matterKeep){
+    var tempEyes = [];
+    tempEyes = matterEyes.splice(matterKeep, matterEyes.length-matterKeep);
+    for (var i = 0; i < matterEyes.length; i++){
+      matterEyes[i].removeFromWorld();
+    }
+    matterEyes = tempEyes;
+  }
 
-  // Just look at the first face and draw all the points
-  //   if (detections.length > 0) {
-  //     let points = detections[0].landmarks.positions;
-  //     for (let i = 0; i < points.length; i++) {
-  //       stroke(161, 95, 251);
-  //       strokeWeight(4);
-  //       point(points[i]._x, points[i]._y);
-  //     }
-  //   }
-
-
+  // for (var i = 0; i < matterEyes.length; i++) {
+  //   matterEyes[i].removeFromWorld();
+  //   // get rid of old rect
+  // }
+  //
+  // matterEyes = [];
 }
-
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
