@@ -46,29 +46,32 @@ function draw() {
   background(0);
   oneText();
 
-  // variable for volume then remap so instead of 0-1 values we get 0-200 values
-  let level = amplitude.getLevel();
-  size = map(level, 0, 1, 0, 200);
+  if (stateChoice == 8) {
 
-  // loops through boundary and shows the obj (should always be only 1 obj in array)
-  for (var i = 0; i < boundary.length; i++) {
-    boundary[i].show();
-  }
+    // variable for volume then remap so instead of 0-1 values we get 0-200 values
+    let level = amplitude.getLevel();
+    size = map(level, 0, 1, 0, 200);
 
-  //loop thru array to display circles as they get added to array
-  for (var i = 0; i < circles.length; i++) {
-    circles[i].show(size);
-  }
-
-  var tempCircles = [];
-  for (var i = 0; i < circles.length; i++) {
-    if (!circles[i].isOffScreen()) {
-      tempCircles.push(circles[i]);
-    } else {
-      circles[i].removeFromWorld();
+    // loops through boundary and shows the obj (should always be only 1 obj in array)
+    for (var i = 0; i < boundary.length; i++) {
+      boundary[i].show();
     }
+
+    //loop thru array to display circles as they get added to array
+    for (var i = 0; i < circles.length; i++) {
+      circles[i].show(size);
+    }
+
+    var tempCircles = [];
+    for (var i = 0; i < circles.length; i++) {
+      if (!circles[i].isOffScreen()) {
+        tempCircles.push(circles[i]);
+      } else {
+        circles[i].removeFromWorld();
+      }
+    }
+    circles = tempCircles;
   }
-  circles = tempCircles;
 }
 
 
@@ -98,8 +101,8 @@ function keyPressed() {
   // press f to enter fullscreen
   else if (keyCode == 70) {
     fullscreen(true);
-    if (stateChoice == 0) {
-      stateChoice = 1;
+    if (stateChoice == 2) {
+      stateChoice = 3;
       toggleSound();
     }
   }
