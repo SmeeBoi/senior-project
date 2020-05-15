@@ -3,7 +3,6 @@ var fade = 0;
 var fade0 = 0;
 var msg = "";
 var stateChoice;
-let particles = [];
 
 function setup() {
   frameRate(24);

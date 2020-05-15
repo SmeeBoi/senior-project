@@ -31,14 +31,12 @@ function textState() {
       }
       break;
 
-      // text has reached full brightness, now it fades out
     case 2:
       fade -= fadeDecrease;
       if (fade < 0) {
         stateChoice = 3;
       }
       break;
-
 
     case 3:
       msg = "pause music in exhibits with spacebar";
