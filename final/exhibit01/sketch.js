@@ -5,7 +5,6 @@ var Engine = Matter.Engine,
   World = Matter.World,
   Bodies = Matter.Bodies;
 
-
 var engine;
 var world;
 var circles = [];
@@ -14,14 +13,20 @@ let sound, amplitude, size;
 var fade;
 var stateChoice;
 var msg;
+var ratio;
+
+
+function preload() {
+  sound = loadSound('pandi & lvusm - scope.mp3');
+}
 
 
 function setup() {
   stateChoice = 0;
   fade = 0;
   msg = "";
-  sound = loadSound('pandi & lvusm - scope.mp3');
   createCanvas(windowWidth, windowHeight);
+  ratio = height / 15;
   // low framerate to support slower devices
   frameRate(24);
   amplitude = new p5.Amplitude();
@@ -44,18 +49,12 @@ function mouseDragged() {
 function draw() {
   // background gets drawn first before everything else
   background(0);
-  oneText();
-
-  if (stateChoice == 8) {
-
+  //oneText();
+stateChoice = 8;
+  if (stateChoice >= 6) {
     // variable for volume then remap so instead of 0-1 values we get 0-200 values
     let level = amplitude.getLevel();
     size = map(level, 0, 1, 0, 200);
-
-    // loops through boundary and shows the obj (should always be only 1 obj in array)
-    for (var i = 0; i < boundary.length; i++) {
-      boundary[i].show();
-    }
 
     //loop thru array to display circles as they get added to array
     for (var i = 0; i < circles.length; i++) {
@@ -74,11 +73,10 @@ function draw() {
   }
 }
 
-
-
 // resize canvas if they play with window size
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  ratio = height / 15;
   // use same temp array apporach with boundary
   var tempBoundary = [];
   for (var i = 0; i < boundary.length; i++) {

@@ -14,7 +14,6 @@ function textState() {
   var fadeIncrease = 4;
   var fadeDecrease = 5;
 
-
   switch (stateChoice) {
     case 0:
       fade0 += fadeIncrease;
@@ -56,7 +55,6 @@ function textState() {
     default:
       stateChoice = 4;
       break;
-
   }
   fadeLimit();
 }

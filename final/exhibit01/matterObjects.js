@@ -20,13 +20,12 @@ function Circle(x, y, r) {
     }
   }
 
-  this.removeFromWorld = function(size) {
+  this.removeFromWorld = function() {
     World.remove(world, this.body);
   }
 
-  this.show = function(size) {
+  this.show = function() {
     var pos = this.body.position;
-
     push();
     translate(pos.x, pos.y);
     strokeWeight(2);
@@ -49,14 +48,4 @@ function Boundary() {
     World.remove(world, this.body);
   }
 
-  this.show = function() {
-    var pos = this.body.position;
-    push();
-    translate(pos.x, pos.y);
-    rectMode(CENTER);
-    noStroke();
-    fill(0);
-    rect(0, 0, windowWidth, bthick);
-    pop();
-  }
 }

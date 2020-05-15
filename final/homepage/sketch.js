@@ -23,7 +23,6 @@ function windowResized() {
 }
 
 function keyPressed() {
-  // press f to enter fullscreen
   if (keyCode == 70) {
     fullscreen(true);
   }
