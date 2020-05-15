@@ -33,7 +33,7 @@ function setup() {
   msg = "";
   //console.log('ml5 version:', ml5.version);
   amplitude = new p5.Amplitude();
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(500, 500);
   video = createCapture(VIDEO);
   video.hide();
   video.size(width, height);
@@ -79,7 +79,7 @@ function draw() {
   let level = amplitude.getLevel();
   size = map(level, 0, 1, 0, max_size);
 
-  background(0);
+  background(0,200,255);
   stateChoice = 8;
   //twoText();
   //    image(video, 0,0, width, height)

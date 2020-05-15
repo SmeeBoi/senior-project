@@ -5,39 +5,35 @@ var max_size;
 function Face(detections) {
 
   function drawLandmarks(detections) {
-
-    // scale(-1,1);
-    //  scale(2.5);
     noFill();
-    // const scaleFactor = 2;
-    const scaleFactor = 2;
+    const scaleFactor = 10;
 
-    //translate(width,0)
-    // translate(-width / scaleFactor, -height / scaleFactor);
-    // translate(-2*width / scaleFactor, height / scaleFactor);
-    // translate(2*(width / scaleFactor), -height / scaleFactor);
-    // scale(-scaleFactor,scaleFactor);
-    // translate(width,0);
-    // scale(-1,1);
+    var vidWidth = video.width;
+    var vidHeight = video.height;
 
-    // translate(width + width/2,0);
-    translate(width + width / scaleFactor, -height / scaleFactor);
+    translate(vidWidth*scaleFactor,0);
+    translate(width/2,height/2);
+    translate(((-vidWidth*scaleFactor)/2),((-vidHeight*scaleFactor)/2));
     scale(-scaleFactor, scaleFactor);
 
-    // scale(2);
     stroke(255);
-    strokeWeight(1);
+    strokeWeight(2/scaleFactor);
+
 
     for (let i = 0; i < detections.length; i++) {
       const leftEye = detections[i].parts.leftEye;
       const rightEye = detections[i].parts.rightEye;
 
+
+      push();
+      fill(0);
       drawPart(leftEye, true);
       drawPart(rightEye, true);
+      pop();
 
       var leftVertX = (leftEye[4]._x - leftEye[1]._x);
       var leftVertY = (leftEye[4]._y - leftEye[1]._y);
-      max_size = 0.78 * (sqrt((leftVertX ** 2) + (leftVertY ** 2)));
+      max_size = 0.80 * (sqrt((leftVertX ** 2) + (leftVertY ** 2)));
 
       // eye circles
       var midXleft = leftEye[0]._x + (leftEye[3]._x - leftEye[0]._x) / 2;

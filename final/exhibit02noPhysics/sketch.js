@@ -28,7 +28,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   video = createCapture(VIDEO);
   video.hide();
-  video.size(width, height);
+  video.size(320, 240);
   const options = {
     withLandmarks: true,
     withDescriptors: false,
@@ -65,10 +65,11 @@ function draw() {
   size = map(level, 0, 1, 0, max_size);
 
   background(0);
-  twoText();
+//  twoText();
+stateChoice = 8;
 
-  var max_drops = 500;
-  var amount = 2;
+  var max_drops = 300;
+  var amount = 1;
 
   if (stateChoice == 8) {
 
@@ -91,6 +92,8 @@ function draw() {
     }
     drops = tempDrops;
 
+    // image(video,0,0,video.width,video.height);
+
     if (detections.length > 0) {
       // console.log(detections)
       push();
@@ -106,7 +109,6 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  video.size(width, height);
 }
 
 // checks for key presses
