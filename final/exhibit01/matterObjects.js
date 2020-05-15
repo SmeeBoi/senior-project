@@ -1,7 +1,3 @@
-// Sameer Desai
-// exhibit01
-// Circle Class
-
 function Circle(x, y, r) {
   var options = {
     friction: 0.3,
