@@ -8,8 +8,11 @@ function twoText() {
 
   switch (stateChoice) {
     case 0:
-      msg = "Press f to go Fullscreen";
-      fade += 5;
+      msg = "loading...";
+      fade += 3;
+      if (fade > 255) {
+        stateChoice = 1;
+      }
       break;
 
     case 1:
@@ -20,7 +23,7 @@ function twoText() {
       break;
 
     case 2:
-      msg = "Enable camera";
+      msg = "02";
       fade += 5;
       if (fade > 255) {
         stateChoice = 3;
@@ -35,11 +38,8 @@ function twoText() {
       break;
 
     case 4:
-      msg = "\"aislin\" by ENRA & Sleepermane";
+      msg = "Press f to go Fullscreen";
       fade += 5;
-      if (fade > 255) {
-        stateChoice = 5;
-      }
       break;
 
     case 5:
@@ -50,7 +50,7 @@ function twoText() {
       break;
 
     case 6:
-      msg = "Move your head around";
+      msg = "\"aislin\" by ENRA & Sleepermane";
       fade += 5;
       if (fade > 255) {
         stateChoice = 7;
@@ -65,6 +65,21 @@ function twoText() {
       break;
 
     case 8:
+      msg = "Move your head around";
+      fade += 5;
+      if (fade > 255) {
+        stateChoice = 9;
+      }
+      break;
+
+    case 9:
+      fade -= 5;
+      if (fade < 0) {
+        stateChoice = 10;
+      }
+      break;
+
+    case 10:
       fade -= 5;
       break;
 

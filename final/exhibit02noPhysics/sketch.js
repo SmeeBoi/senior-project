@@ -65,13 +65,12 @@ function draw() {
   size = map(level, 0, 1, 0, max_size);
 
   background(0);
-//  twoText();
-stateChoice = 8;
+   twoText();
 
   var max_drops = 300;
   var amount = 1;
 
-  if (stateChoice == 8) {
+  if (stateChoice == 10) {
 
     if (drops.length < max_drops) {
       for (var i = 0; i < amount; i++) {
@@ -122,8 +121,8 @@ function keyPressed() {
   // press f to enter fullscreen
   else if (keyCode == 70) {
     fullscreen(true);
-    if (stateChoice == 0) {
-      stateChoice = 1;
+    if (stateChoice == 4) {
+      stateChoice = 5;
       toggleSound();
     }
   }
