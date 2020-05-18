@@ -78,11 +78,6 @@ function Drop(){
   this.fall = function(){
     y += yspeed;
     yspeed = yspeed + 0.05;
-    if (y > height){
-      x = random(width);
-      y = random(-200,100);
-      yspeed = random(4,10);
-    }
   }
 
 this.isOffScreen = function() {

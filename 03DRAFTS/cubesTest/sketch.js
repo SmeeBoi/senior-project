@@ -1,25 +1,46 @@
 // Sameer Desai
 // exhibit03 draft
 let angle = 0;
-var size = 0;
 var cubes = [];
+let sound, amplitude, size;
+
+
+function preload(){
+  sound = loadSound("lvusm - feelings.mp3");
+}
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   angleMode(DEGREES);
   debugMode();
-  //frameRate(24);
+  frameRate(24);
+  amplitude = new p5.Amplitude();
 }
 
 function draw() {
+  let level = amplitude.getLevel();
+  size = map(level, 0, 1, 0, 100);
   background(0,255,200);
   orbitControl(1,1,0.5);
   // camera(0,0,(height/2)/tan(30),0,0,0,0,1,0);
-  perspective(100,width/height, 10,10000);
-  cubes.push(new Cube(10));
+  perspective(70,width/height, 10,10000);
 
-  z += 10;
+  var max_cubes = 3;
+  if (cubes.length < max_cubes){
+  cubes.push(new Cube());
+  }
+  // for(var i = 0; i < 2; i++){
+    // cubes.push(new Cube(size));
+
+    for (var i = 0; i < cubes.length; i++){
+      cubes[i].move();
+      cubes[i].show(size);
+
+    }
+
+  // }
+
 
 
 
@@ -42,23 +63,16 @@ function windowResized() {
 
 }
 
-// checks for key presses
 function keyPressed() {
-  // if spacebar pushed toggleSound()
-  if (keyCode == 32) { // keyCode for spacebar is 32 wack right
+  if (keyCode == 32) {
     toggleSound();
+  } else if (keyCode == 70) {
+    fullscreen(true);
+    if (stateChoice == 2) {
+      stateChoice = 3;
+      toggleSound();
+    }
   }
-
-  // press f to enter fullscreen
-  else if (keyCode == 70) {
-    let fs = fullscreen();
-    fullscreen(!fs);
-  }
-
-  // a and d to move through diff colors
-  // a = 65 and d = 68
-
-
 }
 
 

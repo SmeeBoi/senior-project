@@ -79,12 +79,12 @@ function twoText() {
       }
       break;
 
-    case 10:
-      fade -= 5;
-      break;
+    // case 10:
+    //   // change to 11 is in sketch.js
+    //   break;
 
     default:
-      stateChoice = 6;
+      console.log("messed up");
       break;
 
   }
