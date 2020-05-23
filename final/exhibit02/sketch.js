@@ -11,7 +11,6 @@ var drops = [];
 var fade;
 var stateChoice;
 var msg;
-var mlReady = false;
 
 
 
@@ -44,9 +43,8 @@ function setup() {
 // Start detecting faces
 function modelReady() {
   console.log('faceapi model ready!')
-  mlReady = true;
   //console.log("log = " + faceapi)
-  //faceapi.detect(gotResults);
+  faceapi.detect(gotResults);
   // Triggers gotResults() function to start loop
 }
 
@@ -58,32 +56,21 @@ function gotResults(err, result) {
   }
   //console.log(result)
   detections = result;
-  //faceapi.detect(gotResults)
+  faceapi.detect(gotResults)
   // calls itself to keep looping
 }
 
 function draw() {
-  if (!mlReady) {
-    return;
-  }
-
-
   let level = amplitude.getLevel();
   size = map(level, 0, 1, 0, max_size);
 
   background(0);
-  if (stateChoice < 10){
-    twoText();
-  }
+   twoText();
+
   var max_drops = 300;
   var amount = 1;
 
-if (stateChoice == 6 || stateChoice >= 10) {
-faceapi.detect(gotResults);
-}
-
-
-  if (stateChoice >= 10) {
+  if (stateChoice == 10) {
 
     if (drops.length < max_drops) {
       for (var i = 0; i < amount; i++) {
@@ -115,10 +102,6 @@ faceapi.detect(gotResults);
     }
 
   }
-  // if (stateChoice == 10){
-  // //  faceapi.detect(gotResults);
-  //   stateChoice = 11;
-  // }
 
 
 }
