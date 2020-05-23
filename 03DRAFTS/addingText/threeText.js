@@ -2,7 +2,7 @@ function threeText() {
   fill(fade);
   noStroke();
   textSize(height / 15);
-  textFont('myFont');
+  textFont(myFont);
   textAlign(CENTER, CENTER);
   text(msg, 0,0);
 
