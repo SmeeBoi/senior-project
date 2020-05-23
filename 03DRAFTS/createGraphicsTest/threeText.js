@@ -4,7 +4,14 @@ function threeText() {
   textSize(height / 15);
   textFont(myFont);
   textAlign(CENTER, CENTER);
-  text(msg, 0,0);
+  smooth();
+  // if (stateChoice > 2){
+  //   text(msg,0, 0);
+  // } else{
+  text(msg,0,0);
+
+    // text(msg,width/2, -height/2);
+    // text(msg,width/50, -height/2);
 
   var fadeIncrease = 5;
   var fadeDecrease = 5;
@@ -75,7 +82,7 @@ function threeText() {
       }
       break;
 
-      case 9:
+    case 9:
       break;
 
     default:
@@ -84,6 +91,8 @@ function threeText() {
 
   }
   fadeLimit();
+
+
 }
 
 function fadeLimit() {
@@ -92,4 +101,16 @@ function fadeLimit() {
   } else if (fade < 0) {
     fade = 0;
   }
+}
+
+function displayGraphicsText(msg) {
+  graphicsText.textAlign(CENTER,CENTER);
+  graphicsText.noStroke();
+  graphicsText.textSize(height / 15);
+  graphicsText.textFont(myFont);
+  graphicsText.fill(fade);
+  graphicsText.text(msg, width / 2, height / 2);
+  texture(graphicsText);
+  noStroke();
+  plane(width, height);
 }

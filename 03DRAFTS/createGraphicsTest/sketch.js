@@ -27,6 +27,7 @@ var camReset = false;
 var tPush = false;
 
 let myFont;
+// let graphicsText;
 
 
 
@@ -39,17 +40,20 @@ function setup() {
   frameRate(24);
   angleMode(DEGREES);
   createCanvas(windowWidth, windowHeight, WEBGL);
+  // debugMode();
+  // setAttributes('antialias', true);
+  setAttributes('alpha', false);
   cam = createCamera();
-  cam.setPosition(0, -400, (height / 2) / tan(30));
+  //cam.setPosition(0, -400, (height / 2) / tan(30));
+  // cam.setPosition(0, 0, (height / 2) / tan(30));
+
 
   stateChoice = 0;
   fade = 0;
   msg = "";
 
-  // createCanvas(500, 500, WEBGL);
-  // debugMode();
   amplitude = new p5.Amplitude();
-  expanse = 50;
+  expanse = 100;
   w = 5000;
   h = 5000;
   cols = w / scl;
@@ -67,17 +71,9 @@ function setup() {
 draw = function() {
   var level = amplitude.getLevel();
   size = map(level, 0, 1, 0, 100);
+  // background(200,200,255);
   background(0);
-  // background(200,255,0);
-
-  //  // if (stateChoice == 8) {
-  //   cam.setPosition(0, -400, (height / 2) / tan(30));
-  // }
-  if (stateChoice < 9) {
-    push();
-    threeText();
-    pop();
-  }
+  threeText();
 // stateChoice = 9;
   if (stateChoice == 9) {
 
