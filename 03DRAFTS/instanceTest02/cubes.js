@@ -1,66 +1,41 @@
-
 function Cube() {
-  // push();
-  // // translate(random(-200,200), random(-200,200),random(-200,200))
-  // translate(random(100), 0,z)
-  // fill(255);
-  // // rotateX(angle);
-  // // rotateY(angle);
-  // // rotateY(angle);
-  // // box(random(100,400) + size);
-  // box(20 + size);
-  // pop();
 
-  var x = 0;
-  var y = 0;
-  var z = -1000;
-  var zspeed = 10;
+  var x = random(width);
+  var y = random(height/2,-height/2);
+  // var z = random(-100, -1000);
+   var z = random(-height);
+
+  var zspeed = random(5, 10);
 
 
   this.move = function() {
     z += zspeed;
 
-    if (z > 1000){
-      z = -1000
-      x = 0;
-      y = 0;
-      zspeed = 10;
+    if (z > height) {
+      z = random(-height);
+      x = random(width);
+      // y = random(-10,-200);
+      y = random(height/2,-height/2);
+      zspeed = random(5, 10);
     }
 
   }
 
+
   this.show = function(size) {
     push();
     translate(x, y, z);
-    fill(255);
-    box(20 + size);
+    // fill(255);
+    // noStroke();
+    fill(0);
+    stroke(255);
+    // stroke(0);
+    strokeWeight(1);
+    // ambientMaterial(255,255,255);
+    // normalMaterial();
+    // specularMaterial(255);
+    box(10 + size);
     pop();
   }
 
-
-}
-
-
-
-this.fall = function(){
-  y += yspeed;
-  yspeed = yspeed + 0.05;
-  if (y > height){
-    x = random(width);
-    y = random(-200,100);
-    yspeed = random(4,10);
-  }
-}
-
-this.isOffScreen = function() {
-if (y > height + 10) {
-  return true;
-} else {
-  return false;
-}
-}
-
-this.show = function(){
-stroke(255);
-line(x,y,x,y+length);
 }
