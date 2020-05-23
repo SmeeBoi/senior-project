@@ -1,12 +1,12 @@
 function noiseTerrain() {
   // Daniel Shiffman
-// http://codingtra.in
-// https://youtu.be/IKB1hWWedMk
-// https://thecodingtrain.com/CodingChallenges/011-perlinnoiseterrain.html
+  // http://codingtra.in
+  // https://youtu.be/IKB1hWWedMk
+  // https://thecodingtrain.com/CodingChallenges/011-perlinnoiseterrain.html
 
-// Edited by SacrificeProductions
+  // Edited by SacrificeProductions
 
-  flying -= 0.03;
+  flying -= 0.01;
   var peaks = 100;
   var yoff = flying;
   for (var y = 0; y < rows; y++) {
@@ -19,9 +19,9 @@ function noiseTerrain() {
   }
 
 
-// floor
-push();
- translate(0, 50);
+  // floor
+  push();
+  translate(0, 50);
   rotateX(90);
   noFill();
   strokeWeight(0.6);
@@ -36,9 +36,5 @@ push();
     endShape();
   }
   pop();
-
-
-
-
 
 }
