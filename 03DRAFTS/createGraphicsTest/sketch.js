@@ -70,11 +70,13 @@ function setup() {
 
 draw = function() {
   var level = amplitude.getLevel();
+  // size = map(level, 0, 1, 0, 500);
   size = map(level, 0, 1, 0, 100);
+
   // background(200,200,255);
   background(0);
-  threeText();
-// stateChoice = 9;
+  // threeText();
+stateChoice = 9;
   if (stateChoice == 9) {
 
     cam.lookAt(0, 0, 0);
@@ -91,7 +93,8 @@ draw = function() {
     noiseTerrain();
     push();
     translate(-width / 2, -height / 2)
-    var max_cubes = 300;
+    // var max_cubes = 300;
+    var max_cubes = 200;
     if (cubes.length < max_cubes) {
       cubes.push(new Cube());
     }
@@ -102,8 +105,6 @@ draw = function() {
     }
 
     pop();
-    // stroke(100, 200, 255);
-    // strokeWeight(0.8);
   }
 }
 

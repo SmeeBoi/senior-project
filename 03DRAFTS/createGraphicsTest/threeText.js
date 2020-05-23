@@ -5,13 +5,7 @@ function threeText() {
   textFont(myFont);
   textAlign(CENTER, CENTER);
   smooth();
-  // if (stateChoice > 2){
-  //   text(msg,0, 0);
-  // } else{
   text(msg,0,0);
-
-    // text(msg,width/2, -height/2);
-    // text(msg,width/50, -height/2);
 
   var fadeIncrease = 5;
   var fadeDecrease = 5;
