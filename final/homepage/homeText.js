@@ -23,7 +23,7 @@ function textState() {
       break;
 
     case 1:
-      msg = "use arrow keys or menu on top left to navigate";
+      msg = "use the menu on top left to navigate";
       fade += fadeIncrease;
       if (fade > 255) {
         stateChoice = 2;
