@@ -6,7 +6,7 @@ function noiseTerrain() {
 
   // Edited by SacrificeProductions
 
-  flying -= 0.03;
+  flying -= 0.01;
   var peaks = 100;
   var yoff = flying;
   for (var y = 0; y < rows; y++) {
