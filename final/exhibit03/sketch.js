@@ -33,16 +33,6 @@ let myFont;
 
 function preload() {
   sound = loadSound("lvusm - feelings.mp3");
-  // sound = loadSound("downtime - solo.mp3");
-  // sound = loadSound("Expand w_ shortfatty..mp3");
-  // sound = loadSound("sunshinee.mp3");
-  // sound = loadSound("ember w_ wilf.mp3");
-  // sound = loadSound("Glimlip x Yasper x Dontcry - Miffy.mp3");
-
-
-
-
-
   myFont = loadFont("Montserrat-Thin.ttf");
 }
 
@@ -84,8 +74,8 @@ draw = function() {
 
   // background(200,200,255);
   background(0);
-   // threeText();
-stateChoice = 9;
+   threeText();
+// stateChoice = 9;
   if (stateChoice == 9) {
 
     cam.lookAt(0, 0, 0);

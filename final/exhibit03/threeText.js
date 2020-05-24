@@ -39,7 +39,7 @@ function threeText() {
       break;
 
     case 4:
-      msg = "\"blah\" by ";
+      msg = "\"feelings\" by lvusm";
       fade += fadeIncrease;
       if (fade > 255) {
         stateChoice = 5;
