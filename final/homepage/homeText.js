@@ -23,7 +23,7 @@ function textState() {
       break;
 
     case 1:
-      msg = "use the menu on top left to navigate";
+      msg = "pause music in exhibits with spacebar";
       fade += fadeIncrease;
       if (fade > 255) {
         stateChoice = 2;
@@ -38,7 +38,7 @@ function textState() {
       break;
 
     case 3:
-      msg = "pause music in exhibits with spacebar";
+      msg = "use menu at the top left to navigate";
       fade += fadeIncrease;
       if (fade > 255) {
         stateChoice = 4;
