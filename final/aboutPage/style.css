@@ -348,14 +348,19 @@ ol{
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 99%;
   border-color:white;
   border-style: solid;
   border-width: 1px;
   background-color: black;
   color: white;
   text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
 }
+
 
 
 
