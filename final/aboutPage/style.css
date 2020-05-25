@@ -4,16 +4,76 @@ html{
 }
 
 
-img{
+/* img{
   border: 5px solid white;
   /* text-align:center; */
-}
 
-.sameer{
+
+
+
+.allImages{
+  display:flex;
+  justify-content: center;
+  /* display:inline-block; */
+  /* border: 1px solid white; */
   margin-left:auto;
   margin-right:auto;
+  /* border: 2px blue solid; */
+  /* align-content: center; */
+
+
+}
+
+.leftCol{
+  height:200px;
+  width:356px;
+}
+
+.rightCol {
+  width:100px;
+  /* padding-top:15px;
+  padding-bottom:15px;*/
+  padding-left:20px;
+
+}
+
+.topRight{
+  height:100px;
+  padding-bottom: 10px;
+}
+
+.bttmRight{
+  height:100px;
+}
+
+.smallImages{
+  border: 1px solid white;
+  height:90px;
+  width:90px;
+  filter: grayscale(100%);
+
+}
+
+
+.sameer{
+  width:500px;
+  display:flex;
+  justify-content: center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
   /* text-align: center; */
-  height:600px;
+}
+
+.artistText{
+  text-align: center;
+  width: 500px;
+  justify-content: center;
+  margin-bottom: 20%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 
@@ -21,11 +81,72 @@ h1{
   text-align: center;
   font-size: 80px;
   padding:none;
+  margin-bottom: 0px;
 }
 
 .resourcesUsed{
   margin-bottom:none;
 }
+
+
+.resourceText{
+  display:flex;
+  width:600px;
+  padding-top: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  height: 300px;
+  justify-content: center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 40%;
+  margin-top: 10px;
+  border: solid white 1px;
+
+
+}
+
+
+.srcLeftCol{
+  /* margin-top:30px; */
+  width:500px;
+  height:200px;
+}
+
+.srcRightCol{
+  margin-left: 40px;
+  width:300px;
+  height:200px;
+}
+
+.exLine{
+  margin-bottom: 0px;
+}
+
+.srcLi{
+  margin-left: 20px;
+  margin-bottom: 0px;
+  padding:0px;
+}
+
+.right01{
+
+}
+
+.right02{
+
+}
+
+.right03{
+
+}
+
+
+
+
+
+
 
 body{
   margin-top: none;
@@ -45,20 +166,38 @@ body{
 
 
 ul{
-  list-style-type: circle;
+  padding:0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  list-style-type: none;
 }
 
 
-/* li{
-  padding: 10px;
-} */
+
+ol{
+  padding:0px;
+  margin-left: 0px;
+  margin-top: 0px;
+}
 
 
-.oneLine{
+
+
+li{
+  padding-top: 0px;
+  padding-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+
+.music{
+  font-size: 25px;
   padding: 0px;
   margin-top: auto;
   margin-bottom: 0px;
-  list-style: none;
 
 }
 
@@ -75,10 +214,8 @@ a{
   font-family: 'Montserrat';
   font-size: 20px;
   color: white;
-  overflow: scroll;
-white-space: nowrap;
-  /* text-decoration: underline; */
-  text-underline-position: under;
+  text-decoration: underline;
+  /* text-underline-position: under; */
 }
 
 a:hover {
@@ -89,27 +226,29 @@ a:hover {
 
 .gif{
   height: 200px;
+  border: 1px solid white;
 }
 
 
-.images{
-  overflow: scroll;
-  height: 80px;
+/* .images{
+  object-fit: contain;
+  height: 100px;
   padding: auto;
   text-align: center;
 
-}
+} */
 
 .images2{
 
 }
 
-.images:hover{
-  border-color: cyan;
-  transition: all 0.8s ease 0s;
+.smallImages:hover{
+  /* border-color: cyan; */
+  filter: grayscale(0%);
+  transition: all 0.4s ease 0s;
 }
 
-.exhibit1{
+.exhibitBlock{
   padding: 30px;
   border: 1px solid white;
   margin-top: 20px;
@@ -168,14 +307,16 @@ a:hover {
   transition: all 0.8s ease 0s;
 }
 
-.resources{
-  /* line-height: normal; */
-  margin-left: 20%;
-  margin-right: 20%;
-  padding: 20px;
-  /* text-align: auto; */
-  /* list-style-position: inside; */
+
+.rex1{
+  text-align: left;
+  margin-bottom: 30px;
 }
+
+ol{
+  margin-left: 30px;
+}
+
 
 
 .row {
@@ -233,6 +374,8 @@ a:hover {
 /* Style the social media icons with color, if you want */
 .icon-bar a:hover {
   background-color: cyan;
+  transition: all 0.8s ease 0s;
+
 }
 
 .linkedin {

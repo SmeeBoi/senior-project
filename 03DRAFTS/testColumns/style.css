@@ -1,0 +1,43 @@
+html{
+  padding:50px;
+  background-color: black;
+}
+
+
+.allImages{
+  display:flex;
+  border: 1px solid white;
+  margin:auto;
+
+}
+
+.leftCol{
+  height:200px;
+  width:356px;
+}
+
+.rightCol{
+  width:200px;
+  padding-top:10px;
+  padding-left:10px;
+
+}
+
+.topRight{
+  height:100px;
+}
+
+.bttmRight{
+  height:100px;
+}
+
+.smallImages{
+  height:90px;
+  width:90px;
+  /* padding-top:10px;
+  padding-left:10px;
+  padding-bottom:50%; */
+  filter: grayscale(100%);
+
+
+}
