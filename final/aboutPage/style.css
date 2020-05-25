@@ -1,20 +1,38 @@
 html{
   background-color: black;
-  padding: 50px;
+  /* padding: 50px; */
 }
 
 
-/* img{
-  width: 10%;
-  height: 10%;
-} */
+img{
+  border: 5px solid white;
+  /* text-align:center; */
+}
+
+.sameer{
+  margin-left:auto;
+  margin-right:auto;
+  /* text-align: center; */
+  height:600px;
+}
+
 
 h1{
   text-align: center;
+  font-size: 80px;
+  padding:none;
+}
+
+.resourcesUsed{
+  margin-bottom:none;
 }
 
 body{
-  margin: auto;
+  margin-top: none;
+  margin-bottom: none;
+
+  margin-right: auto;
+  margin-left: auto;
   width: 50%;
   font-family: 'Montserrat';
   font-size: 20px;
@@ -26,15 +44,23 @@ body{
 }
 
 
-li{
-  padding: 10px
+ul{
+  list-style-type: circle;
 }
 
 
-/* .oneLine{
-  margin: none;
-  padding: none;
+/* li{
+  padding: 10px;
 } */
+
+
+.oneLine{
+  padding: 0px;
+  margin-top: auto;
+  margin-bottom: 0px;
+  list-style: none;
+
+}
 
 
 .textBlock{
@@ -49,15 +75,52 @@ a{
   font-family: 'Montserrat';
   font-size: 20px;
   color: white;
-  overflow: hidden;
+  overflow: scroll;
 white-space: nowrap;
   /* text-decoration: underline; */
+  text-underline-position: under;
 }
 
 a:hover {
   color: cyan;
   transition: all 0.8s ease 0s;
 }
+
+
+.gif{
+  height: 200px;
+}
+
+
+.images{
+  overflow: scroll;
+  height: 80px;
+  padding: auto;
+  text-align: center;
+
+}
+
+.images2{
+
+}
+
+.images:hover{
+  border-color: cyan;
+  transition: all 0.8s ease 0s;
+}
+
+.exhibit1{
+  padding: 30px;
+  border: 1px solid white;
+  margin-top: 20px;
+  margin-bottom: 40%;
+  vertical-align: center;
+}
+
+
+/* .exhibit{
+  margin-top: 40%;
+} */
 
 
 
@@ -105,28 +168,51 @@ a:hover {
   transition: all 0.8s ease 0s;
 }
 
-
 .resources{
-  line-height: normal;
-  text-align: center;
-  list-style-position: inside;
+  /* line-height: normal; */
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 20px;
+  /* text-align: auto; */
+  /* list-style-position: inside; */
 }
-
 
 
 .row {
   display: flex;
+  /* flex-wrap: wrap; */
+  /* text-align: middle; */
+  flex-flow: column wrap;
+
+
+
 }
 
 .column {
-  flex: 33.33%;
-  padding: 10px;
+  flex: 100%;
+  /* padding: 0 4px; */
+  /* vertical-align:middle; */
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-color:white;
+  border-style: solid;
+  border-width: 1px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+
 
 
 .icon-bar {
   position: fixed;
-  top: 2%;
+  top: 4%;
   right: 2%;
   /* -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -137,7 +223,7 @@ a:hover {
 .icon-bar a {
   display: block;
   text-align: center;
-  padding: 16px;
+  padding: 20px;
   transition: all 0.3s ease;
   color: black;
   font-size: 20px;
