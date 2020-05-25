@@ -14,16 +14,43 @@ h1{
 }
 
 body{
+  margin: auto;
+  width: 50%;
   font-family: 'Montserrat';
   font-size: 20px;
   color: white;
   text-decoration: none;
+  /* margin-left: 20px;
+    margin-right: 20px; */
+    max-width: 1000px;
 }
+
+
+li{
+  padding: 10px
+}
+
+
+/* .oneLine{
+  margin: none;
+  padding: none;
+} */
+
+
+.textBlock{
+  padding: 5px;
+  /* margin-top: 30px ;
+  margin-bottom: 30px ; */
+}
+
+
 
 a{
   font-family: 'Montserrat';
   font-size: 20px;
   color: white;
+  overflow: hidden;
+white-space: nowrap;
   /* text-decoration: underline; */
 }
 
@@ -78,6 +105,25 @@ a:hover {
   transition: all 0.8s ease 0s;
 }
 
+
+.resources{
+  line-height: normal;
+  text-align: center;
+  list-style-position: inside;
+}
+
+
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 10px;
+}
+
+
 .icon-bar {
   position: fixed;
   top: 2%;
@@ -95,12 +141,12 @@ a:hover {
   transition: all 0.3s ease;
   color: black;
   font-size: 20px;
-  background: cyan;
+  background: white;
 }
 
 /* Style the social media icons with color, if you want */
 .icon-bar a:hover {
-  background-color: #000;
+  background-color: cyan;
 }
 
 .linkedin {
