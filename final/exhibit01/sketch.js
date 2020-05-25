@@ -18,6 +18,7 @@ function preload() {
 }
 
 function setup() {
+  // noCursor();
   stateChoice = 0;
   fade = 0;
   msg = "";
@@ -61,6 +62,17 @@ function draw() {
     }
     circles = tempCircles;
   }
+
+ //  push();
+ // // noStroke();
+ // // fill(255);
+ // noFill();
+ // stroke(255);
+ // circle(mouseX, mouseY, 10);
+ // pop();
+
+
+
 }
 
 function windowResized() {

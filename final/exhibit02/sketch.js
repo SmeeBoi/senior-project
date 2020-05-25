@@ -19,6 +19,7 @@ function preload() {
 }
 
 function setup() {
+  // noCursor();
   frameRate(24);
   stateChoice = 0;
   fade = 0;
@@ -102,6 +103,14 @@ function draw() {
     }
 
   }
+
+  //  push();
+  // // noStroke();
+  // // fill(255);
+  // noFill();
+  // stroke(255);
+  // circle(mouseX, mouseY, 10);
+  // pop();
 
 
 }
