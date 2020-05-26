@@ -4,13 +4,6 @@ html{
 }
 
 
-/* img{
-  border: 5px solid white;
-  /* text-align:center; */
-
-
-
-
 .allImages{
   display:flex;
   justify-content: center;
@@ -215,7 +208,6 @@ li{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
 }
 
 
@@ -232,6 +224,13 @@ li{
   padding: 5px;
   /* margin-top: 30px ;
   margin-bottom: 30px ; */
+}
+
+.codeLink{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding:0px;
 }
 
 
@@ -278,44 +277,6 @@ a:hover {
 .sameer:hover{
   filter: grayscale(0%);
   transition: all 0.5s ease 0s;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: cyan;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
 }
 
 
