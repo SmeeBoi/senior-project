@@ -84,7 +84,7 @@ function twoText() {
     //   break;
 
     default:
-      console.log("messed up");
+      // console.log("messed up");
       break;
 
   }
