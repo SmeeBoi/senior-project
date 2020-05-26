@@ -56,7 +56,7 @@ html{
   margin-left:auto;
   margin-right:auto;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 
@@ -73,9 +73,11 @@ html{
   border-color: white;
   border-radius: 50px;
   cursor: pointer;
-  margin-left:0px;
-  margin-right:50px;
+  margin-left:auto;
+  margin-right:auto;
   justify-content: center;
+  margin-bottom:20%;
+  text-align: center;
 
 }
 
@@ -85,14 +87,29 @@ html{
   transition: all 0.8s ease 0s;
 }
 
-.artistText{
-  text-align: left;
-  width: 500px;
+
+.artistContainer{
+  padding:10px;
+  display:flex;
   justify-content: center;
-  padding-left: 40px;
-  margin-bottom: 20%;
   margin-left:auto;
   margin-right:auto;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  text-align: center;
+
+}
+
+
+.artistText{
+  width: 500px;
+  text-align: center;
+  display:block;
+  justify-content: center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 
