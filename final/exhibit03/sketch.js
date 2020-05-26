@@ -73,8 +73,8 @@ draw = function() {
 
   // background(200,200,255);
   background(0);
-   // threeText();
-stateChoice = 9;
+    threeText();
+// stateChoice = 9;
   if (stateChoice == 9) {
 
     cam.lookAt(0, 0, 0);
@@ -104,13 +104,9 @@ stateChoice = 9;
     }
 
     pop();
-
     // translate(0,0,0);
     // normalMaterial();
     // sphere(50)
-
-
-
   }
 }
 
