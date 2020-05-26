@@ -64,8 +64,29 @@ html{
   margin-right:auto;
   margin-top: 20px;
   margin-bottom: 20px;
+}
 
-  /* text-align: center; */
+
+.emailButton{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  outline: none;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: black;
+  border-width: small;
+  border-color: white;
+  border-radius: 50px;
+  cursor: pointer;
+
+}
+
+.emailButton:hover{
+  background-color: white;
+  color: black;
+  transition: all 0.8s ease 0s;
 }
 
 .artistText{
@@ -255,6 +276,44 @@ a:hover {
   transition: all 0.5s ease 0s;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: cyan;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 
 .exhibitBlock{
@@ -333,9 +392,6 @@ ol{
   /* flex-wrap: wrap; */
   /* text-align: middle; */
   flex-flow: column wrap;
-
-
-
 }
 
 .column {
@@ -389,7 +445,6 @@ ol{
 .icon-bar a:hover {
   background-color: cyan;
   transition: all 0.8s ease 0s;
-
 }
 
 .linkedin {

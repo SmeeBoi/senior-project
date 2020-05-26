@@ -1,19 +1,19 @@
 function Cube() {
-  var x = random(width);
-  var y = random(height/2,-height/2);
-   var z = random(-height);
+  var x = random(50,width-50);
+  var y = random(height/2,0);
+   var z = random(-height,0);
 
-  var zspeed = random(5, 10);
+  var zspeed = random(8, 13);
 
 
   this.move = function() {
     z += zspeed;
-    if (z > height) {
-      z = random(-height);
-      x = random(width);
+    if (z > 0.75*height) {
+      z = random(-height,0);
+      x = random(50,width-50);
       // y = random(-10,-200);
-      y = random(height/2,-height/2);
-      zspeed = random(5, 10);
+      y = random(height/2,0);
+      zspeed = random(8, 13);
 
     }
 
@@ -22,6 +22,7 @@ function Cube() {
 
   this.show = function(size) {
     push();
+    // translate(height/5,0,0)
     translate(x, y, z);
     fill(0);
     stroke(255);

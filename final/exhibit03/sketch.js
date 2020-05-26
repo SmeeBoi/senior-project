@@ -9,7 +9,7 @@ var cubes = [];
 let sound, amplitude, size;
 
 var cols, rows;
-var scl = 50;
+var scl = 90;
 var w = 0;
 var h = 0;
 var flying = 0;
@@ -53,9 +53,8 @@ function setup() {
   msg = "";
 
   amplitude = new p5.Amplitude();
-  expanse = 100;
-  w = 5000;
-  h = 5000;
+  w = 2200;
+  h = 2200;
   cols = w / scl;
   rows = h / scl;
   for (var x = 0; x < cols; x++) {
@@ -70,17 +69,17 @@ function setup() {
 
 draw = function() {
   var level = amplitude.getLevel();
-  size = map(level, 0, 1, 0, 100);
+  size = map(level, 0, 1, 0, 90);
 
   // background(200,200,255);
   background(0);
-   threeText();
-// stateChoice = 9;
+   // threeText();
+stateChoice = 9;
   if (stateChoice == 9) {
 
     cam.lookAt(0, 0, 0);
     if (camReset) {
-      cam.setPosition(0, -400, (height / 2) / tan(30));
+      cam.setPosition(0, -250, (height / 2) / tan(30));
       camReset = false;
     }
     orbitControl(1, 1, 0.1);
@@ -93,7 +92,7 @@ draw = function() {
     push();
     translate(-width / 2, -height / 2)
     // var max_cubes = 300;
-    var max_cubes = 200;
+    var max_cubes = 45;
     if (cubes.length < max_cubes) {
       cubes.push(new Cube());
     }
@@ -101,9 +100,17 @@ draw = function() {
     for (var i = 0; i < cubes.length; i++) {
       cubes[i].move();
       cubes[i].show(size);
+
     }
 
     pop();
+
+    // translate(0,0,0);
+    // normalMaterial();
+    // sphere(50)
+
+
+
   }
 }
 
